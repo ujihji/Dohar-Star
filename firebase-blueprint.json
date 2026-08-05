@@ -1,0 +1,60 @@
+{
+  "entities": {
+    "users": {
+      "title": "Users",
+      "description": "User profile accounts",
+      "type": "object",
+      "properties": {
+        "handle": { "type": "string" },
+        "name": { "type": "string" },
+        "avatar": { "type": "string" },
+        "bio": { "type": "string" },
+        "email": { "type": "string" },
+        "followers": { "type": "number" },
+        "following": { "type": "number" },
+        "totalLikes": { "type": "number" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["handle", "name", "email"]
+    },
+    "videos": {
+      "title": "Short Videos",
+      "description": "Uploaded vertical short videos",
+      "type": "object",
+      "properties": {
+        "videoUrl": { "type": "string" },
+        "thumbnailUrl": { "type": "string" },
+        "creatorId": { "type": "string" },
+        "creatorHandle": { "type": "string" },
+        "creatorName": { "type": "string" },
+        "creatorAvatar": { "type": "string" },
+        "caption": { "type": "string" },
+        "hashtags": { "type": "array", "items": { "type": "string" } },
+        "soundTitle": { "type": "string" },
+        "soundArtist": { "type": "string" },
+        "likesCount": { "type": "number" },
+        "commentsCount": { "type": "number" },
+        "sharesCount": { "type": "number" },
+        "viewsCount": { "type": "number" },
+        "likedBy": { "type": "array", "items": { "type": "string" } },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["videoUrl", "creatorId", "caption"]
+    },
+    "comments": {
+      "title": "Video Comments",
+      "description": "User comments on short videos",
+      "type": "object",
+      "properties": {
+        "videoId": { "type": "string" },
+        "userId": { "type": "string" },
+        "userName": { "type": "string" },
+        "userAvatar": { "type": "string" },
+        "text": { "type": "string" },
+        "timestamp": { "type": "string" },
+        "likes": { "type": "number" }
+      },
+      "required": ["videoId", "userId", "text"]
+    }
+  }
+}
